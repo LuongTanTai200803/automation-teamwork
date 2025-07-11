@@ -2,7 +2,7 @@ from unittest.mock import patch
 
 from monolith_app import create_app
 
-from task_helper_helper import filter_overdue_tasks
+from task_helper import filter_overdue_tasks
 from datetime import datetime, timedelta, timezone
 
 def test_filter_overdue_tasks():
