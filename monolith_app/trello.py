@@ -4,7 +4,7 @@ import os
 
 trello_webhook = Blueprint("trello_webhook", __name__)
 
-@trello_webhook.route("/webhook/trello", methods=["HEAD", "GET", "POST"])
+@trello_webhook.route("/webhook/trello/v1", methods=["HEAD", "GET", "POST"])
 def handle_trello():
     if request.method in ["HEAD", "GET"]:
         return "Webhook verification", 200
