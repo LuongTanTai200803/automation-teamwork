@@ -23,7 +23,9 @@ jobs:
           script: |
             [ -d automation-teamwork ] || git clone https://github.com/LuongTanTai200803/automation-teamwork.git
             cd automation-teamwork
+            git fetch origin
             git checkout dev
-            git pull origin dev
+            git reset --hard origin/dev
+            
             docker compose down
             docker compose up -d --build
