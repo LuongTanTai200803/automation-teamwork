@@ -21,8 +21,9 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd automation-teamwork || git clone https://github.com/LuongTanTai200803/automation-teamwork.git && cd automation-teamwork
+            [ -d automation-teamwork ] || git clone https://github.com/LuongTanTai200803/automation-teamwork.git
+            cd automation-teamwork
             git checkout dev
             git pull origin dev
-            docker-compose down
-            docker-compose up -d --build
+            docker compose down
+            docker compose up -d --build
