@@ -1,0 +1,24 @@
+name: Deploy to server
+run-name: Deploy to server
+on:
+  push:
+    branches:
+      - "dev"
+
+jobs:
+  deploy:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull code from GitHub
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/automation-teamwork
+            git pull origin dev
+            source venv/bin/activate
+            pip install -r requirements.txt
+            sudo systemctl restart flaskapp  # hoặc restart docker/nginx 
