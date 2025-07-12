@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Gunicorn sẽ chạy Flask app
-CMD ["gunicorn", "-c", "gunicorn.conf.py", "wsgi:momolith_app"]
+CMD ["gunicorn", "-c", "gunicorn.conf.py", "wsgi:app"]
