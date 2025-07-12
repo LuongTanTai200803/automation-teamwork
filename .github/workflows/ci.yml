@@ -11,21 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 🧾 Checkout code
+    - name:  Checkout code
       uses: actions/checkout@v3
 
-    - name: 🐍 Set up Python
+    - name:  Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.12"
 
-    - name: 📦 Install dependencies
+    - name:  Install dependencies
       run: |
         python -m venv venv
         source venv/bin/activate
         pip install -r requirements.txt
 
-    - name: 🧪 Run Pytest
+    - name:  Run Pytest
       run: |
         source venv/bin/activate
         pytest -v
