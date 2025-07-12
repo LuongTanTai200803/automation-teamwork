@@ -29,4 +29,4 @@ jobs:
             git pull origin dev
             source venv/bin/activate
             pip install -r requirements.txt
-            sudo systemctl restart flaskapp  # hoặc restart docker/nginx 
+            sudo systemctl restart flaskapp 
