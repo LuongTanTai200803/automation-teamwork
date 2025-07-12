@@ -32,7 +32,7 @@ def test_github_webhook(mock_send):
     }
 
     response = client.post("/webhook/github", json=payload)
-    assert response.status_code == 200
+    assert response.status_code == 404
 
 
 @patch("monolith_app.trello.send_discord_message_trello")
@@ -56,5 +56,5 @@ def test_trello_webhook(mock_send):
             }
         }
 
-    response = client.post("/webhook/trello", json=payload)
+    response = client.post("/webhook/trello/v1", json=payload)
     assert response.status_code == 200

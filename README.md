@@ -7,6 +7,7 @@ Giải quyết vấn đề chậm trễ giao tiếp trong các nhóm dev nhỏ k
 
 ### Giải pháp
 
+Chạy server cục bộ:
 - Dùng webhook GitHub → Discord
 - Dùng webhook Trello → Discord
 - Cron job hàng ngày → Discord

@@ -6,6 +6,7 @@ click==8.2.1
 DateTime==5.5
 dotenv==0.9.9
 Flask==3.1.1
+gunicorn==23.0.0
 idna==3.10
 iniconfig==2.1.0
 itsdangerous==2.2.0
