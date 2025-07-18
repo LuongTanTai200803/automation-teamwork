@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 DISCORD_URL_TRELLO = os.getenv("DISCORD_URL_TRELLO")
 DISCORD_URL_GITHUB = os.getenv("DISCORD_URL_GITHUB")
-
+print("DISCORD_URL_TRELLO:", DISCORD_URL_TRELLO)
+print("DISCORD_URL_GITHUB:", DISCORD_URL_GITHUB)
 def send_discord_message_trello(content: str):
     if not DISCORD_URL_TRELLO:
         print(" DISCORD_URL_TRELLO chưa được cấu hình.")
