@@ -31,8 +31,8 @@ def test_github_webhook(mock_send):
         "repository": {"full_name": "username/repo"}
     }
 
-    response = client.post("/webhook/github", json=payload)
-    assert response.status_code == 404
+    response = client.post("/webhook/github/v1", json=payload)
+    assert response.status_code == 200
 
 
 @patch("monolith_app.trello.send_discord_message_trello")

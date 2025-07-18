@@ -3,7 +3,7 @@ from .discord import send_discord_message_github
 
 github_webhook = Blueprint("github_webhook", __name__)
 
-@github_webhook.route("/webhook/github/v1/", methods=["POST"])
+@github_webhook.route("/webhook/github/v1", methods=["POST"])
 def handle_github():
     payload = request.json
     print(f"🧾 Webhook github gửi:{payload}" )

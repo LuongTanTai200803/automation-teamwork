@@ -31,7 +31,7 @@ def handle_trello():
 
         text = f"🆕 Task mới: **{task_name}**\n📅 Hạn: {due_date or 'Chưa có'}\n👤 Giao cho: {assignee}\n🔗 {url}"
         send_discord_message_trello(text)
-
+        print("✅ Đã gửi thông báo đến Discord:", text)
     except Exception as e:
         print("❌ Lỗi xử lý webhook:", e)
 

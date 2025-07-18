@@ -12,13 +12,13 @@ TASKS = [
     {"name": "Tạo video demo", "due": "2025-07-12"}
 ]
 
-TRELLO_KEY = os.getenv("TRELLO_API_KEY")
-TRELLO_TOKEN = os.getenv("TRELLO_TOKEN")
+TRELLO_API_KEY = os.getenv("TRELLO_API_KEY")
+TRELLO_API_TOKEN = os.getenv("TRELLO_API_TOKEN")
 TRELLO_BOARD_ID = os.getenv("TRELLO_BOARD_ID")
 
 def get_cards_from_trello():
     url = f"https://api.trello.com/1/boards/{TRELLO_BOARD_ID}/cards"
-    params = {"key": TRELLO_KEY, "token": TRELLO_TOKEN}
+    params = {"key": TRELLO_API_KEY, "token": TRELLO_API_TOKEN}
     response = requests.get(url, params=params)
 
     if response.status_code == 200:
