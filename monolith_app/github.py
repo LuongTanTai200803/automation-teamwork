@@ -10,7 +10,8 @@ def handle_github():
 
     # Kiểm tra đúng nhánh dev
     ref = payload.get("ref", "")
-    if ref != "refs/heads/dev":
+
+    if ref != ["refs/heads/dev", "refs/heads/version_2", "refs/heads/version_1"]:
         return "Not dev branch", 200
 
     repo = payload.get("repository", {}).get("name", "unknown repo")
