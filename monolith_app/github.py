@@ -10,7 +10,9 @@ def handle_github():
 
     # Kiểm tra đúng nhánh dev
     ref = payload.get("ref", "")
-
+    
+    branch = ref.split("/")[-1] if ref else ""
+    
     # if ref != ["refs/heads/dev", "refs/heads/version_2", "refs/heads/version_1"]:
     #     return "Not dev branch", 200
 
@@ -22,7 +24,7 @@ def handle_github():
     compare_url = payload.get("compare", "#")
 
     text = (
-        f"🚀 **Push mới lên `{repo}` (nhánh dev)**\n"
+        f"🚀 **Push mới lên `{repo}` (nhánh {branch})**\n"
         f"👤 Bởi: {pusher}\n"
         f"💬 Commit:\n{commit_messages}\n"
         f"🔗 {compare_url}"
